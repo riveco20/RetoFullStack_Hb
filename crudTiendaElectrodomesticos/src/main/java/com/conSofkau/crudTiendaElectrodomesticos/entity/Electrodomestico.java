@@ -12,8 +12,6 @@ public class Electrodomestico {
     @Id
     private Integer id;
     private String electrodomestico;
-    private String precio;
-    private String marca;
 
     public Electrodomestico() {
     }
@@ -34,19 +32,4 @@ public class Electrodomestico {
         this.electrodomestico = electrodomestico;
     }
 
-    public String getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(String precio) {
-        this.precio = precio;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
 }

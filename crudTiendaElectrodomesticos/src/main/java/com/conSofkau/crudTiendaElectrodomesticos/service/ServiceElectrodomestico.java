@@ -7,6 +7,8 @@ import org.springframework.data.repository.support.Repositories;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class ServiceElectrodomestico implements ServiceI{
@@ -21,8 +23,13 @@ public class ServiceElectrodomestico implements ServiceI{
 
     @Override
     public Electrodomestico listarId(int id) {
-        return null;
+        Optional<Electrodomestico> optionalTodo = data.findById(id);
+        if(optionalTodo.isEmpty()){
+            throw  new NoSuchElementException("El electrodomesticolistado no existe");
+        }
+        return optionalTodo.get();
     }
+
 
     @Override
     public Electrodomestico guardar(Electrodomestico electrodomesticos) {
@@ -31,11 +38,9 @@ public class ServiceElectrodomestico implements ServiceI{
 
     @Override
     public void borrar(int id) {
+        data.delete(listarId(id));
 
     }
 
-    @Override
-    public Electrodomestico actualizar(Electrodomestico electrodomesticos) {
-        return null;
-    }
+
 }

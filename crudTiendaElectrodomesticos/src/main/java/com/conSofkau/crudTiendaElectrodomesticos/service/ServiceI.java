@@ -11,6 +11,4 @@ public interface ServiceI {
     public Electrodomestico listarId(int id);
     public Electrodomestico guardar(Electrodomestico electrodomesticos);
     public void borrar(int id);
-    public Electrodomestico actualizar(Electrodomestico electrodomesticos);
-
 }
