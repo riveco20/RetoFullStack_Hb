@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Tienda")
-public class Electrodomesticos {
+public class Electrodomestico {
 
     @Id
     private Integer id;
@@ -15,7 +15,7 @@ public class Electrodomesticos {
     private String precio;
     private String marca;
 
-    public Electrodomesticos() {
+    public Electrodomestico() {
     }
 
     public Integer getId() {
