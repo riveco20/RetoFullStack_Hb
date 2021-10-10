@@ -16,6 +16,8 @@ const Form = () => {
 
     const request = {
         nameElectrodomestico: state.nameElectrodomestico,
+        precio:state.precio,
+        marca:state.marca,
       id: null,
       vendido: false,
     };
@@ -64,10 +66,28 @@ const Form = () => {
       <input
         type="text"
         nameElectrodomestico="nameElectrodomestico"
-        placeholder="¿Que vas agregar?"
+        placeholder="Agregar Electrodomesticos"
         defaultValue={item.nameElectrodomestico}
         onChange={(event) => {
           setState({ ...state, nameElectrodomestico: event.target.value });
+        }}
+      ></input>
+      <input
+        type="text"
+        nameElectrodomestico="Marca"
+        placeholder="Agregar marca"
+        defaultValue={item.marca}
+        onChange={(event) => {
+          setState({ ...state, marca: event.target.value });
+        }}
+      ></input>
+      <input
+        type="text"
+        nameElectrodomestico="Precio"
+        placeholder="Agregar El precio"
+        defaultValue={item.precio}
+        onChange={(event) => {
+          setState({ ...state, precio: event.target.value });
         }}
       ></input>
       {item.id && <button onClick={onEdit}>Actualizar</button>}

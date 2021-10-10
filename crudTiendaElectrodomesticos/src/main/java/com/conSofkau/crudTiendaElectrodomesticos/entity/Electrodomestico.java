@@ -16,6 +16,8 @@ public class Electrodomestico {
     private Integer id;
     private String serial;
     private String nameElectrodomestico;
+    private String marca;
+    private String precio;
     private boolean vendido;
 
     public Electrodomestico() {

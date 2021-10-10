@@ -34,7 +34,7 @@ public class ServiceElectrodomestico implements ServiceI{
     @Override
     public Electrodomestico guardar(Electrodomestico electrodomesticos) {
         UUID uuid = UUID.randomUUID();
-        electrodomesticos.setSerial(uuid.toString().replace("-","").toUpperCase());
+        electrodomesticos.setSerial(uuid.toString().replace("-","").substring(17));
         return data.save(electrodomesticos);
 
     }

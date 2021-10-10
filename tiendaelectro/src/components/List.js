@@ -59,6 +59,8 @@ const List = () => {
           <tr>
             <td>ID</td>
             <td>electrodomestico</td>
+            <td>Marca</td>
+            <td>Precio</td>
             <td>Serial</td>
             <td>¿vendido?</td>
           </tr>
@@ -69,6 +71,8 @@ const List = () => {
               <tr key={electrodomestico.id} style={electrodomestico.vendido? decorationDone : {}}>
                 <td>{electrodomestico.id}</td>
                 <td>{electrodomestico.nameElectrodomestico}</td>
+                <td>{electrodomestico.marca}</td>
+                <td>{electrodomestico.precio}</td>
                 <td>{electrodomestico.serial}</td>
                 <td>
                   <input
