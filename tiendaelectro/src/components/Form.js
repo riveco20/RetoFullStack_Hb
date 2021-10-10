@@ -44,7 +44,7 @@ const Form = () => {
       isVendido: item.isVendido,
     };
 
-    fetch(HOST_API + "/electrodomestico", {
+    fetch(HOST_API + "/actualizarElectrodomestico", {
       method: "PUT",
       body: JSON.stringify(request),
       headers: {
