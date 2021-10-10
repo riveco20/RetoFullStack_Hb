@@ -36,7 +36,7 @@ const List = () => {
       id: electrodomestico.id,
       vendido: event.target.checked,
     };
-    fetch(HOST_API + "/electrodomestico", {
+    fetch(HOST_API + "/actualizarElectrodomestico", {
       method: "PUT",
       body: JSON.stringify(request),
       headers: {
