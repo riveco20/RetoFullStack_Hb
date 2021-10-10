@@ -1,35 +1,27 @@
 package com.conSofkau.crudTiendaElectrodomesticos.entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
-@Table(name="Tienda")
+@Data
+@lombok.Getter
+@lombok.Setter
 public class Electrodomestico {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String electrodomestico;
+    private String serial;
+    private String nameElectrodomestico;
+    private boolean vendido;
 
     public Electrodomestico() {
     }
 
-    public Integer getId() {
-        return id;
+    public Electrodomestico(String serial) {
+        this.serial = serial;
     }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getElectrodomestico() {
-        return electrodomestico;
-    }
-
-    public void setElectrodomestico(String electrodomestico) {
-        this.electrodomestico = electrodomestico;
-    }
-
 }

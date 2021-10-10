@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ServiceElectrodomestico implements ServiceI{
@@ -30,10 +31,12 @@ public class ServiceElectrodomestico implements ServiceI{
         return optionalTodo.get();
     }
 
-
     @Override
     public Electrodomestico guardar(Electrodomestico electrodomesticos) {
+        UUID uuid = UUID.randomUUID();
+        electrodomesticos.setSerial(uuid.toString().replace("-","").toUpperCase());
         return data.save(electrodomesticos);
+
     }
 
     @Override

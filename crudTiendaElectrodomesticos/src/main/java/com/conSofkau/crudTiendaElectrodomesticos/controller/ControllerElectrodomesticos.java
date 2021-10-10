@@ -7,18 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class ControllerElectrodomesticos {
 
     @Autowired
     private ServiceI servicio;
 
-    @GetMapping(value="api/listarElectrodomestico")
+    @GetMapping(value="api/electrodomestico")
     public Iterable<Electrodomestico> listarElectrodomesticos(){
         return servicio.listar();
     }
 
 
-    @PostMapping(value ="api/apiguardarElectrodomestico")
+    @PostMapping(value ="api/electrodomestico")
     public Electrodomestico guardarElectrodomestico(@RequestBody Electrodomestico electrodomestico){
         return servicio.guardar(electrodomestico);
     }
@@ -31,7 +33,7 @@ public class ControllerElectrodomesticos {
         throw new RuntimeException("No existe el id para actualizar");
     }
 
-    @DeleteMapping(value = "api/{id}electrodomestico")
+    @DeleteMapping(value = "api/{id}/electrodomestico")
     public void delete(@PathVariable("id") Integer id){
         servicio.borrar(id);
     }
