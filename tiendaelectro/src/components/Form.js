@@ -33,6 +33,8 @@ const Form = () => {
       .then((electrodomestico) => {
         dispatch({ type: "add-item", item: electrodomestico });
         setState({ nameElectrodomestico: "" });
+        setState({marca:""})
+        setState({precio:""})
         formRef.current.reset();
       });
   };
@@ -42,6 +44,9 @@ const Form = () => {
 
     const request = {
     nameElectrodomestico: state.nameElectrodomestico,
+    marca:state.marca,
+    precio:state.precio,
+  
       id: item.id,
       isVendido: item.isVendido,
     };
@@ -57,6 +62,8 @@ const Form = () => {
       .then((electrodomestico) => {
         dispatch({ type: "update-item", item: electrodomestico });
         setState({ nameElectrodomestico: "" });
+        setState({marca:""});
+        setState({precio:""});
         formRef.current.reset();
       });
   };

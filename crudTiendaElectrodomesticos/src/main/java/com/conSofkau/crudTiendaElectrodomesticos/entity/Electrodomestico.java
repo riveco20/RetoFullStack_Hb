@@ -20,6 +20,7 @@ public class Electrodomestico {
     private String precio;
     private boolean vendido;
 
+
     public Electrodomestico() {
     }
 

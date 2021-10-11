@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface ServiceI {
+public interface ServiceInterface {
 
     public List<Electrodomestico> listar();
     public Electrodomestico listarId(int id);

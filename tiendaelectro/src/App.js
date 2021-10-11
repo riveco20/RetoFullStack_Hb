@@ -5,10 +5,13 @@ import List from "./components/List";
 function App() {
   return (
     <StoreProvider>
-       
-      <h2 align="center" class="mb-4">TIENDA ELECTRODOMESTICO</h2>
+
+      
+      <div align = "center">
+      <h2 align="center" >TIENDA ELECTRODOMESTICO</h2>
       <Form/>
       <List/>
+      </div>
     </StoreProvider>
   );
 }

@@ -2,9 +2,11 @@ package com.conSofkau.crudTiendaElectrodomesticos.controller;
 
 
 import com.conSofkau.crudTiendaElectrodomesticos.entity.Electrodomestico;
-import com.conSofkau.crudTiendaElectrodomesticos.service.ServiceI;
+import com.conSofkau.crudTiendaElectrodomesticos.service.ServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -12,7 +14,8 @@ import org.springframework.web.bind.annotation.*;
 public class ControllerElectrodomesticos {
 
     @Autowired
-    private ServiceI servicio;
+    private ServiceInterface servicio;
+
 
     @GetMapping(value="api/electrodomestico")
     public Iterable<Electrodomestico> listarElectrodomesticos(){
@@ -42,7 +45,6 @@ public class ControllerElectrodomesticos {
     public Electrodomestico obtenerTodoId(@PathVariable("id") Integer id){
         return servicio.listarId(id);
     }
-
 
 
 }

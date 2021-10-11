@@ -1,21 +1,19 @@
 package com.conSofkau.crudTiendaElectrodomesticos.service;
 
 import com.conSofkau.crudTiendaElectrodomesticos.entity.Electrodomestico;
-import com.conSofkau.crudTiendaElectrodomesticos.repository.RepositoryI;
+import com.conSofkau.crudTiendaElectrodomesticos.repository.RepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.support.Repositories;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;
 
-@Service
-public class ServiceElectrodomestico implements ServiceI{
+@org.springframework.stereotype.Service
+public class ServiceElectrodomestico implements ServiceInterface {
 
     @Autowired
-    private RepositoryI data;
+    private RepositoryInterface data;
 
     @Override
     public List<Electrodomestico> listar() {

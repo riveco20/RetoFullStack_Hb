@@ -75,8 +75,8 @@ const List = () => {
                 <td>{electrodomestico.precio}</td>
                 <td>{electrodomestico.serial}</td>
                 <td>
-                  <input
-                    type="checkbox"
+              
+                  <input type="checkbox"
                     defaultChecked={electrodomestico.vendido}
                     onChange={(event) => onChange(event, electrodomestico)}
                   ></input>
